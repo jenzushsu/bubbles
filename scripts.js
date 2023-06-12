@@ -2,7 +2,7 @@ const VideoSDK = window.WebVideoSDK.default
 
 let zmClient = VideoSDK.createClient()
 
-let signatureEndpoint = 'https://kcwm14i07k.execute-api.ap-southeast-1.amazonaws.com/latest'
+let signatureEndpoint = "https://kcwm14i07k.execute-api.ap-southeast-1.amazonaws.com/latest";
 let sessionName = 'orbworld'
 let sessionPasscode = 'test123'
 let userName = 'Participant' + Math.floor(Math.random() * 100)
@@ -22,6 +22,9 @@ function start() {
 
   fetch(signatureEndpoint, {
     method: 'POST',
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       sessionName: sessionName,
       role: role
