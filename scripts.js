@@ -2,7 +2,7 @@ const VideoSDK = window.WebVideoSDK.default
 
 let zmClient = VideoSDK.createClient()
 
-let signatureEndpoint = 'https://or116ttpz8.execute-api.us-west-1.amazonaws.com/default/videosdk'
+let signatureEndpoint = 'https://kcwm14i07k.execute-api.ap-southeast-1.amazonaws.com/latest'
 let sessionName = 'orbworld'
 let sessionPasscode = 'test123'
 let userName = 'Participant' + Math.floor(Math.random() * 100)
