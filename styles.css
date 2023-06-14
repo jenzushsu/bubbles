@@ -19,6 +19,7 @@ html, body {
   position: fixed;
   left: 0;
   top: 0;
+  height: 200px;
   z-index: 10px;
 }
 
