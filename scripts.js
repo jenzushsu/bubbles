@@ -63,7 +63,7 @@ function joinSession(signature) {
 function startVideo() {
 
   if(zmStream.isRenderSelfViewWithVideoElement()) {
-    zmStream.startVideo({ videoElement: document.querySelector('#self-view-video') }).then(() => {
+    zmStream.startVideo({ videoElement: document.querySelector('#self-view-video'), virtualBackground: { imageUrl: 'blur'} }).then(() => {
       document.getElementById('videoButton').style.display = 'none'
       document.getElementById('self-view-wrapper').style.display = 'flex'
       document.getElementById('self-view-canvas').style.display = 'none'
@@ -72,7 +72,7 @@ function startVideo() {
       console.log(error)
     })
   } else {
-    zmStream.startVideo({ mirrored: true }).then(() => {
+    zmStream.startVideo({ mirrored: true, virtualBackground: { imageUrl: 'blur'} }).then(() => {
       zmStream.renderVideo(document.querySelector('#self-view-canvas'), zmClient.getCurrentUserInfo().userId, 355, 200, 0, 0, 2).then(() => {
         document.getElementById('videoButton').style.display = 'none'
         document.getElementById('self-view-wrapper').style.display = 'flex'
