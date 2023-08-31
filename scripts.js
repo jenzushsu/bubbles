@@ -3,7 +3,8 @@ const VideoSDK = window.WebVideoSDK.default
 let zmClient = VideoSDK.createClient()
 
 let signatureEndpoint = "https://kcwm14i07k.execute-api.ap-southeast-1.amazonaws.com/latest";
-let sessionName = 'orbworld'
+// let sessionName = 'orbworld'
+let sessionName = 'techsummitorbworld'
 let sessionPasscode = 'test123'
 let userName = 'Participant' + Math.floor(Math.random() * 100)
 let role = 1
@@ -32,6 +33,7 @@ function start() {
   }).then((response) => {
     return response.json()
   }).then((data) => {
+    console.log(data.signature)
     joinSession(data.signature)
   }).catch((error) => {
   	console.log(error)
